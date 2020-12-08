@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 20f;
 
     void Start() {
+        // delete all enemies at the start of the game
         GameObject[] gameObjects =  GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject en in gameObjects) 
             Destroy(en);
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        
+        // player movement
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 

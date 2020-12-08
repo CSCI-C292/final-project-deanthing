@@ -20,10 +20,11 @@ public class SpeedSpawner : MonoBehaviour
     }
 
     void SpawnPowerup() {
-        // y: 0.62
+        // get random position inside terrain
         int spawnX = Random.Range(110,415);
         int spawnZ = Random.Range(106,385);
 
+        // instantiate powerup
         Instantiate(Powerup, new Vector3(spawnX, 1.5f, spawnZ), Quaternion.identity);
     }
 

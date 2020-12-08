@@ -9,10 +9,9 @@ public class Spawner : MonoBehaviour
     float period = 1f;
     float time;
 
-    // Update is called once per frame
     void Update()
     {
-        // when time is greater than threshold, spawn
+        // when time is greater than threshold, spawn enemy
         time = Time.timeSinceLevelLoad;
         if (time>next) {
             next += period;
@@ -39,7 +38,7 @@ public class Spawner : MonoBehaviour
         v3Pos.y = 0;
         Instantiate(enemy, v3Pos, Quaternion.identity);
 
-
+        // terrain boundaries
         // top left cord 110, 0, 385
         // top right cord 415, 0, 385
         // bottom right cord 415, 0, 106

@@ -18,16 +18,22 @@ public class Enemy : MonoBehaviour
             Debug.Log("Fell below map");
             Destroy(this.gameObject);
         }
+
+        // if enenmy goes above terrain, bring it back down to terrain height
+        Vector3 p = transform.position;
+        if(p.y > Terrain.activeTerrain.SampleHeight(transform.position)) {
+             p.y = Terrain.activeTerrain.SampleHeight(transform.position);
+             transform.position = p;
+        }
         
         
     }
 
     void moveToPlayer() {
-
         // move enemy
         Player = GameObject.Find("Player");
         Vector3 offset = Player.transform.position - this.transform.position;
-        offset = offset.normalized * 16.5f;
+        offset = offset.normalized * 17f;
         controller.SimpleMove(offset);
 
         // rotate enemy
@@ -36,6 +42,7 @@ public class Enemy : MonoBehaviour
         this.transform.rotation = rotation;
 
     }
+    
     void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.name == "Player") {
             // check old highscore and update

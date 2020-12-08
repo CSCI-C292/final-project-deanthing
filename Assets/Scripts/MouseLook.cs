@@ -13,15 +13,14 @@ public class MouseLook : MonoBehaviour
     public int score = 0;
     void Start()
     {
+        // lock cursor in game
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         look();
         shoot();
-        
     }
 
     void shoot() {
@@ -34,8 +33,6 @@ public class MouseLook : MonoBehaviour
 
                 // if hit enemy, destroy gameobject and increase score
                 if (hit.transform.CompareTag("Enemy")) {
-
-                    
                     Destroy(hit.transform.gameObject);
                     score++;
                     GameObject.Find("Score").GetComponent<TextMeshProUGUI>().SetText("Score: " + score);

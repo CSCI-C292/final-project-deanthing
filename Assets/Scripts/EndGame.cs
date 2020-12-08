@@ -7,7 +7,7 @@ using TMPro;
 
 public class EndGame : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // display high score
     void Start()
     {
         int highscore = GameObject.Find("GameScore").GetComponent<GameScore>().highscore;
@@ -16,7 +16,7 @@ public class EndGame : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // when space, restart game
     void Update()
     {
         if (Input.GetKeyDown("space"))
