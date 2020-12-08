@@ -1493,6 +1493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330462879}
   - component: {fileID: 1330462880}
+  - component: {fileID: 1330462881}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1527,6 +1528,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 328379474074790319, guid: 99bd89cfad58646c4b7217b97f1c40db, type: 3}
+--- !u!114 &1330462881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330462878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b8380107cb2428f8f63bd630c6c6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Powerup: {fileID: 1978319602567223071, guid: d49be2206645142f2b52b24199a4a435, type: 3}
 --- !u!1001 &1339392464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2704,6 +2718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 150
   playerBody: {fileID: 1398107172}
+  score: 0
 --- !u!81 &1891612816
 AudioListener:
   m_ObjectHideFlags: 0

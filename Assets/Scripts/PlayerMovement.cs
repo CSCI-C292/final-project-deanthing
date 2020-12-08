@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
+    public float speed = 20f;
 
     void Start() {
         GameObject[] gameObjects =  GameObject.FindGameObjectsWithTag("Enemy");
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * y;
 
-        controller.SimpleMove(move * speed * Time.deltaTime * 40);
+        controller.SimpleMove(move * speed);
 
     }
 

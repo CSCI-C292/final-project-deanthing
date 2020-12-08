@@ -10,14 +10,6 @@ public class Enemy : MonoBehaviour
     GameObject Player;
     public CharacterController controller;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    
-    }
-
-    // Update is called once per frame
     void Update()
     {
         moveToPlayer();
@@ -35,7 +27,7 @@ public class Enemy : MonoBehaviour
         // move enemy
         Player = GameObject.Find("Player");
         Vector3 offset = Player.transform.position - this.transform.position;
-        offset = offset.normalized * 14;
+        offset = offset.normalized * 16.5f;
         controller.SimpleMove(offset);
 
         // rotate enemy
